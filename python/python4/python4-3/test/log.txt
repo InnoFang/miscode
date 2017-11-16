@@ -1,0 +1,17 @@
+2017-10-02 11:14:06.352 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 50 rollingAverage = 0
+2017-10-02 11:14:06.380 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 48 rollingAverage = 50
+2017-10-02 11:14:06.380 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: BEAT!! beats=1.0
+2017-10-02 11:14:06.433 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 57 rollingAverage = 49
+2017-10-02 11:14:06.479 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 66 rollingAverage = 51
+2017-10-02 11:14:06.512 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 77 rollingAverage = 55
+2017-10-02 11:14:06.546 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 81 rollingAverage = 62
+2017-10-02 11:14:06.579 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 86 rollingAverage = 70
+2017-10-02 11:14:06.612 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 90 rollingAverage = 77
+2017-10-02 11:14:06.645 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 92 rollingAverage = 83
+2017-10-02 11:14:06.679 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 94 rollingAverage = 87
+2017-10-02 11:14:06.712 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 95 rollingAverage = 90
+2017-10-02 11:14:06.775 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 97 rollingAverage = 92
+2017-10-02 11:14:06.787 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 99 rollingAverage = 94
+2017-10-02 11:14:06.820 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 98 rollingAverage = 96
+2017-10-02 11:14:06.863 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 98 rollingAverage = 97
+2017-10-02 11:14:06.891 13070-13070/io.innofang.heartbeat I/HeartBeatOldFragment: onPreviewFrame: imgAvg = 91 rollingAverage = 98
