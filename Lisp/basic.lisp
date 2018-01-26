@@ -1,6 +1,6 @@
 ;gnu clisp 2.49
 
-(print "Hello, Dcoder!")
+(print "Hello, world!")
 (print (+ 1 2 3 4 5 6 7 8 9 10))    
 (print (/ (- 7 1) (+ 1 2)))
 (quote (+ 1 2))
@@ -60,3 +60,16 @@
 	(format t "~A" string)
 	(read))
 (askem "How old you are?")
+
+
+;; Variables
+(print (let ((x 1) (y 2))
+     (+ x y)))
+
+(defun ask-number()
+    (format t "Please enter a number. ~%")
+    (let ((val (read)))
+         (if (numberp val)
+         (val)
+         (ask-number))))
+(ask-number)
