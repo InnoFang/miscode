@@ -12,41 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="variables.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/variables.clj">
+      <file leaf-file-name="interactionWithJava.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/interactionWithJava.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="collections.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/collections.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="189" column="39" lean-forward="false" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="structMap.clj" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/structMap.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/clojure-1.8.0.jar!/clojure/core.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="3914" column="10" lean-forward="false" selection-start-line="3914" selection-start-column="10" selection-end-line="3914" selection-end-column="10" />
+            <state relative-caret-position="349">
+              <caret line="87" column="23" lean-forward="false" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -63,6 +33,14 @@
         <option value="Clojure Namespace" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>run</find>
+      <find>Runnable</find>
+      <find>APRIL</find>
+      <find>if-not</find>
+    </findStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -82,6 +60,8 @@
         <option value="$PROJECT_DIR$/src/Collections.clj" />
         <option value="$PROJECT_DIR$/src/collections.clj" />
         <option value="$PROJECT_DIR$/src/structMap.clj" />
+        <option value="$PROJECT_DIR$/src/interactWithJava.clj" />
+        <option value="$PROJECT_DIR$/src/interactionWithJava.clj" />
       </list>
     </option>
   </component>
@@ -90,6 +70,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
@@ -112,6 +98,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,9 +118,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,7 +143,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Clojure Application.structMap">
+  <component name="RunManager" selected="Clojure Application.interactionWithJava">
     <configuration name="Collections" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
       <module name="Clojure" />
       <setting name="path" value="$PROJECT_DIR$/src/Collections.clj" />
@@ -272,6 +258,16 @@
       <setting name="params" value="" />
       <setting name="workDir" value="$PROJECT_DIR$/src" />
     </configuration>
+    <configuration name="interactionWithJava" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="Clojure" />
+      <setting name="path" value="$PROJECT_DIR$/src/interactionWithJava.clj" />
+      <setting name="namespace" value="" />
+      <setting name="useLein" value="false" />
+      <setting name="profiles" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src" />
+    </configuration>
     <configuration name="structMap" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
       <module name="Clojure" />
       <setting name="path" value="$PROJECT_DIR$/src/structMap.clj" />
@@ -282,30 +278,20 @@
       <setting name="params" value="" />
       <setting name="workDir" value="$PROJECT_DIR$/src" />
     </configuration>
-    <configuration name="variables" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="Clojure" />
-      <setting name="path" value="$PROJECT_DIR$/src/variables.clj" />
-      <setting name="namespace" value="" />
-      <setting name="useLein" value="false" />
-      <setting name="profiles" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/src" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Clojure Application.variables" />
-      <item index="1" class="java.lang.String" itemvalue="Clojure Application.Collections" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="3" class="java.lang.String" itemvalue="Clojure Application.collections" />
-      <item index="4" class="java.lang.String" itemvalue="Clojure Application.structMap" />
+      <item index="0" class="java.lang.String" itemvalue="Clojure Application.Collections" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="Clojure Application.collections" />
+      <item index="3" class="java.lang.String" itemvalue="Clojure Application.structMap" />
+      <item index="4" class="java.lang.String" itemvalue="Clojure Application.interactionWithJava" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Clojure Application.structMap" />
-        <item index="1" class="java.lang.String" itemvalue="Clojure Application.collections" />
-        <item index="2" class="java.lang.String" itemvalue="Clojure Application.Collections" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="Clojure Application.variables" />
+        <item index="0" class="java.lang.String" itemvalue="Clojure Application.interactionWithJava" />
+        <item index="1" class="java.lang.String" itemvalue="Clojure Application.structMap" />
+        <item index="2" class="java.lang.String" itemvalue="Clojure Application.collections" />
+        <item index="3" class="java.lang.String" itemvalue="Clojure Application.Collections" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -323,12 +309,13 @@
       <workItem from="1517034105278" duration="2141000" />
       <workItem from="1517042474869" duration="850000" />
       <workItem from="1517043334889" duration="9630000" />
-      <workItem from="1517154985742" duration="1063000" />
+      <workItem from="1517154985742" duration="1200000" />
+      <workItem from="1517214296302" duration="5058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18700000" />
+    <option name="totallyTimeSpent" value="23895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -339,7 +326,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -347,7 +334,7 @@
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329849" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22049356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22371244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -375,6 +362,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/variables.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4914">
+          <caret line="189" column="39" lean-forward="false" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101764">
+          <caret line="3914" column="10" lean-forward="false" selection-start-line="3914" selection-start-column="10" selection-end-line="3914" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/structMap.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/variables.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -496,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/variables.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
+        <state relative-caret-position="0">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
@@ -504,16 +523,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collections.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="4914">
           <caret line="189" column="39" lean-forward="false" selection-start-line="189" selection-start-column="39" selection-end-line="189" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/clojure-1.8.0.jar!/clojure/core.clj">
+    <entry file="jar://D:/Java/jdk1.8.0_91/src.zip!/java/util/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="3914" column="10" lean-forward="false" selection-start-line="3914" selection-start-column="10" selection-end-line="3914" selection-end-column="10" />
+        <state relative-caret-position="420">
+          <caret line="649" column="7" lean-forward="true" selection-start-line="649" selection-start-column="7" selection-end-line="649" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -522,6 +541,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="498" column="10" lean-forward="false" selection-start-line="498" selection-start-column="10" selection-end-line="498" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interactionWithJava.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="87" column="23" lean-forward="false" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
           <folding />
         </state>
       </provider>
