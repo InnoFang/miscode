@@ -7,7 +7,7 @@ import java.io.File
 fun main(args: Array<String>) {
     // 统计字符个数
     val map = HashMap<Char, Int>()
-    File("F:\\IDEA\\KotlinInAction\\KotlinInAction.iml")
+    File("F:\\Github\\playground\\Kotlin\\Kotlin.iml")
             .readText()
             .toCharArray()
             .filterNot(Char::isWhitespace)
