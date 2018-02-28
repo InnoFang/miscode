@@ -25,17 +25,45 @@ fun main(args: Array<String>) {
     chars.puts()
     println("------ after  swap ------")
     ints.swap(0, 2)
-    chars.swap(0,2)
+    chars.swap(0, 2)
     ints.puts()
     chars.puts()
 
     var a = 1
     var b = 2
     println("a:$a, b:$b")
-    (a to b).let{ a = it.second; b = it.first }
+    // swap
+    // method 1
+//    (a to b).let{ a = it.second; b = it.first }
 
+    // method 2
+//    with(a to b) { a = second; b = first }
+
+    // method 3
+    (a to b).run { a = second; b = first }
     "a:$a, b:$b"()
+    val str = "jaskldjfhakljashdfiwjhialsjhlkblzjmxd"
+    val store = HashMap<Char, Int>()
+    str.forEach { store[it] = store.getOrElse(it, { 0 }) + 1 }
+    store.forEach(::println)
 
+
+    // swap 3 variable
+    a = 1
+    b = 2
+    var c = 3
+    Triple(a, b, c).run { a = third; b = first; c = second; }
+
+    printResult(1, 2)
 }
+
+data class Swap(val a: Int, val b: Int)
+fun printResult(x: Int, y: Int) {
+    println("before: x:$x, y:$y")
+    val (y, x) = Swap(x, y)
+    println("after : x:$x, y:$y")
+}
+
+
 
 operator fun String.invoke() = println(this)
