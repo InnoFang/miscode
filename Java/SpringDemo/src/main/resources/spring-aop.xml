@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="custom_service" class="io.innofang.aop.CustomService">
+        <property name="name" value="Inno's Blog"/>
+        <property name="url" value="https://innofang.github.io"/>
+    </bean>
+
+    <bean id="hijack_before_method_bean" class="io.innofang.aop.HijackMethodBeforeAdvice"/>
+    <bean id="hijack_after_method" class="io.innofang.aop.HijackAfterMethod"/>
+    <bean id="hijack_throw_exception_method" class="io.innofang.aop.HijackThrowExceptionMethod"/>
+    <bean id="hijack_around_method" class="io.innofang.aop.HijackAroundMethod"/>
+
+    <bean id="custom_service_proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="custom_service"/>
+        <property name="interceptorNames">
+            <list>
+                <!--<value>hijack_before_method_bean</value>-->
+                <!--<value>hijack_after_method</value>-->
+                <!--<value>hijack_throw_exception_method</value>-->
+                <value>hijack_around_method</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

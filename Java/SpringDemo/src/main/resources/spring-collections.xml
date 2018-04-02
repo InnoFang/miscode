@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customer_bean" class="io.innofang.collections.Customer">
+        <property name="list">
+            <list>
+                <!-- List 属性既可以通过 <value> 注入字符串，也可以通过 <ref> 注入容器中其他的 Bean-->
+                <value>1</value>
+                <ref bean="person_bean"/>
+                <bean class="io.innofang.collections.Person">
+                    <property name="name" value="felix"/>
+                    <property name="address" value="guangdong"/>
+                    <property name="age" value="25"/>
+                </bean>
+                <value>WHAT</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <!--Set 与 List 类似-->
+                <value>1</value>
+                <bean class="io.innofang.collections.Person">
+                    <property name="age" value="12"/>
+                    <property name="address" value="sichuan"/>
+                    <property name="name" value="Jacob"/>
+                </bean>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <!--一个 entry 就是一个 Map 元素-->
+                <entry key="Key 1" value="1"/>
+                <entry key="Key 2" value-ref="person_bean"/>
+                <entry key="Key 2">
+                    <bean class="io.innofang.collections.Person">
+                        <property name="age" value="12"/>
+                        <property name="address" value="sichuan"/>
+                        <property name="name" value="Jacob"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="pros">
+            <props>
+                <!-- Properties 类型类似于Map 类型的特例，Map 元素的键值可以对应任何类型的对象，但是Properties只能是字符串-->
+                <prop key="admin">admin</prop>
+                <prop key="support">support</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="person_bean" class="io.innofang.collections.Person">
+        <property name="name" value="innofang"/>
+        <property name="address" value="shanxi"/>
+        <property name="age" value="25"/>
+    </bean>
+
+</beans>

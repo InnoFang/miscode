@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student_fang" class="io.innofang.aop_auto_proxy.Student" p:name="Inno"/>
+    <bean id="teacher_fang" class="io.innofang.aop_auto_proxy.Teacher" p:name="Felix"/>
+
+    <bean id="hijack_around_method" class="io.innofang.aop_auto_proxy.HijackAroundMethod"/>
+
+    <bean id="custom_advisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="pattern" value=".*goto.*"/>
+        <property name="advice" ref="hijack_around_method"/>
+    </bean>
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*fang</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>custom_advisor</value>
+            </list>
+        </property>
+    </bean>
+</beans>
