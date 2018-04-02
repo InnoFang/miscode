@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="hello_bean" class="io.innofang.HelloWorld">
+    <bean id="hello_bean" class="io.innofang.hello_world.HelloWorld">
         <property name="name" value="Inno Fang"/>
     </bean>
 

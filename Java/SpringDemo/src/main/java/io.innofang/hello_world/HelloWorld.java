@@ -1,4 +1,4 @@
-package io.innofang;
+package io.innofang.hello_world;
 
 /**
  * Created by Inno Fang on 2018/3/30.
