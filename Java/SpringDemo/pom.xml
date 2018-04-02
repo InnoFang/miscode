@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.innofang</groupId>
+  <artifactId>SpringDemo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <!-- Maven 项目的打包方式，默认是 jar。其他还有 war，zip，pom -->
+  <packaging>war</packaging>
+  <!-- 项目描述名 -->
+  <name>SpringDemo Maven Webapp</name>
+  <!-- 项目地址  -->
+  <url>http://maven.apache.org</url>
+
+
+  <build>
+    <finalName>SpringDemo</finalName>
+
+  </build>
+
+  <properties>
+    <org.springframework.version>4.2.0.RELEASE</org.springframework.version>
+    <mysql.connector.version>5.1.44-bin</mysql.connector.version>
+  </properties>
+
+  <!-- 依赖列表 -->
+  <dependencies>
+    <!-- 依赖项 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <!--<type></type>-->
+      <!-- scope 依赖范围，描述在什么范围内该依赖有用 -->
+      <!--<scope></scope>-->
+      <!-- 依赖是否可选，默认是 false -->
+      <!--<optional></optional>-->
+      <!-- 排除依赖传递列表 -->
+      <!--<exclusions>
+        <exclusion></exclusion>
+      </exclusions>-->
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.25</version>
+    </dependency>
+  </dependencies>
+
+</project>
