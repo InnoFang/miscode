@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Welcome(props) {
+          return <h1>Hello, {props.name}</h1>;
+        }
+
+        class Welcome1 extends React.Component {
+            render() {
+                return <h1>Hello, {this.props.name}</h1>;
+            }
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Welcome1 name="Inno"/>
+                    <Welcome name="Felix"/>
+                    <Welcome name="Jacob"/>
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            // <Welcome1 name="Inno Fang"/>,
+            // <Welcome name="Inno Fang"/>,
+            <App />,
+            document.getElementById('root')
+        );
+    </script>
+  </body>
+</html>

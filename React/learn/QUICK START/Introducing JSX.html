@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const user = {
+          firstName: 'Inno',
+          lastName: 'Fang',
+      };
+
+      function formatName(user) {
+          return `${user.firstName} ${user.lastName}`
+      }
+
+      function getGreeting(user) {
+          if (user) {
+              return <h1>Hello, {formatName(user)}</h1>;
+          }
+          return <h1>Hello, Stranger.</h1>
+      }
+
+      const element = (<h1>Hello, {formatName(user)}</h1>);
+
+      const element1 = React.createElement(
+          'h1',
+          {className: 'greeting'},
+          'Hello, World!'
+          );
+
+      ReactDOM.render(
+          // element,
+          getGreeting(),
+          document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
