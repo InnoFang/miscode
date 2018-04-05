@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    class Toggle extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                isToggleOn: true,
+            };
+
+            // This binding is necessary to make `this` work in the callback
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick() {
+            this.setState(prevState => ({
+                isToggleOn: !prevState.isToggleOn,
+            }));
+        }
+
+        render() {
+            return (
+                // Without binding in constructor, you should do the follow
+//                    <button onClick={() => this.handleClick()}>
+                // or
+//                    <button onClick={this.handleClick.bind(this)}>
+                    <button onClick={this.handleClick}>
+                        {this.state.isToggleOn ? 'ON' : 'OFF'}
+                    </button>
+            )
+        }
+    }
+
+    class Popper extends React.Component {
+        constructor() {
+            super();
+            this.state = {name:'Hello World!'};
+        }
+
+        // 通过 bind 方式向监听函数传参，在类组件中定义的监听函数，事件对象 e 要排在所传递参数的后面
+        preventPop(name, e) {
+//            e.preventDefault();
+            alert(name);
+        }
+
+        render(){
+            return (
+                    <div>
+                        <p>hello</p>
+                        {/* Pass params via bind() method. */}
+                        <a href="https://reactjs.org" onClick={this.preventPop.bind(this,this.state.name)}>Click</a>
+                    </div>
+            );
+        }
+    }
+
+    ReactDOM.render(
+//        <Toggle/>,
+        <Popper/>,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>
+
+<!--
+========向事件处理程序传递参数========
+通常我们会为事件处理程序传递额外的参数。例如，若是 id 是你要删除那一行的 id，以下两种方式都可以向事件处理程序传递参数：
+
+```
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+
+上述两种方式是等价的，分别通过 arrow functions 和 Function.prototype.bind 来为事件处理函数传递参数。
+
+上面两个例子中，参数 e 作为 React 事件对象将会被作为第二个参数进行传递。通过箭头函数的方式，事件对象必须显式的进行传递，但是通过 bind 的方式，事件对象以及更多的参数将会被隐式的进行传递。
+
+值得注意的是，通过 bind 方式向监听函数传参，在类组件中定义的监听函数，事件对象 e 要排在所传递参数的后面
+-->
