@@ -49,16 +49,18 @@ class MouseTracker extends React.Component {
 }
 
 function withMouse(Component) {
-  return class extends React.COmponent {
-    render(){
+  return class extends React.Component {
+    render() {
       return (
         <Mouse render={mouse => (
-          <Component {...this.props} mouse={mouse}/>
+          <Component {...this.props} mouse={mouse} />
         )}/>
       );
     }
   }
-} 
+}
 
-ReactDOM.render(<MouseTracker />, document.getElementById('root'));
+const WithMouse = withMouse(Cat);
+
+ReactDOM.render(<WithMouse />, document.getElementById('root'));
 </script>
