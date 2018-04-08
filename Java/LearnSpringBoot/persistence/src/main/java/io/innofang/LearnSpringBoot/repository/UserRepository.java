@@ -1,5 +1,6 @@
 package io.innofang.LearnSpringBoot.repository;
 
+
 import io.innofang.LearnSpringBoot.domain.User;
 import org.springframework.stereotype.Repository;
 
