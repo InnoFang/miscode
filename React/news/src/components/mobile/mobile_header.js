@@ -8,7 +8,7 @@ export default class MobileHeader extends React.Component {
         return (
             <div id="mobileheader">
                 <header>
-                    <img src={require('../images/logo.png')} alt="logo"/>
+                    <img src={require('../../images/logo.png')} alt="logo"/>
                     <span>ReactNews</span>
                 </header>
             </div>

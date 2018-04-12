@@ -14,8 +14,8 @@ import {
 
 import 'antd/dist/antd.css'
 
-import PCIndex from './components/pc_index'
-import MobileIndex from './components/mobile_index'
+import PCIndex from './components/pc/pc_index'
+import MobileIndex from './components/mobile/mobile_index'
 
 export default class Root extends React.Component {
     render() {
