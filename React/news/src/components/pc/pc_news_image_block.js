@@ -7,7 +7,7 @@ import {
     Card
 } from 'antd'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Route,
     Link
 } from 'react-router-dom'
@@ -19,6 +19,7 @@ export default class PCNewsImageBlock extends React.Component {
             news: ''
         };
     }
+
     componentWillMount() {
         var myFetchOptions = {
             method: 'GET'
@@ -29,6 +30,7 @@ export default class PCNewsImageBlock extends React.Component {
             .then(response => response.json())
             .then(json => this.setState({news: json}));
     };
+
     render() {
         const styleImage = {
             display: "block",
@@ -45,24 +47,20 @@ export default class PCNewsImageBlock extends React.Component {
         const newsList = news.length
             ? news.map((newsItem, index) => (
                 <div key={index} id="imageblock">
-                    <Router>
-                        <Route>
-                            <Link to={`details/${newsItem.uniquekey}`} target="_blank">
-                                <div class="custom-image">
-                                    <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s}/>
-                                </div>
-                                <div class="custom-card">
-                                    <h3 style={styeH3}>{newsItem.title}</h3>
-                                    <p>{newsItem.author_name}</p>
-                                </div>
-                            </Link>
-                        </Route>
-                    </Router>
+                    <Link to={`details/${newsItem.uniquekey}`} target="_blank">
+                        <div id="custom-image">
+                            <img alt="" style={styleImage} src={newsItem.thumbnail_pic_s}/>
+                        </div>
+                        <div id="custom-card">
+                            <h3 style={styeH3}>{newsItem.title}</h3>
+                            <p>{newsItem.author_name}</p>
+                        </div>
+                    </Link>
                 </div>
             ))
             : '没有加载到任何新闻';
         return (
-            <div class="topNewsList">
+            <div id="topNewsList">
                 <Card title={this.props.cartTitle} bordered={true} style={{
                     width: this.props.width
                 }}>

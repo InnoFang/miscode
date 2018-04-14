@@ -139,11 +139,11 @@
     float: left;
 }
 
-.custom-card {
+#custom-card {
     padding: 5px;
 }
 
-.custom-card p {
+#custom-card p {
     color: #999;
 }
 
