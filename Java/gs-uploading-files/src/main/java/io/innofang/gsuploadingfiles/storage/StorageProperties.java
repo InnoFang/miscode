@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Created by Inno Fang on 2018/4/23.
  */
 
-@ConfigurationProperties("storage")
+@ConfigurationProperties(value = "storage")
 public class StorageProperties {
 
     /**
