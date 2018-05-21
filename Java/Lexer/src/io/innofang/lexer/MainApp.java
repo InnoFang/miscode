@@ -47,10 +47,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
-
-        // Set the application icon.
-        //this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
+        this.primaryStage.setTitle("Lexer");
 
         initRootLayout();
 
@@ -88,10 +85,10 @@ public class MainApp extends Application {
             lexerOverviewController = loader.getController();
             lexerOverviewController.setMainApp(this);
 
-            File file = getCodeFilePath();
-            if (null != file) {
-                loadCodeFromFile(file);
-            }
+            //File file = getCodeFilePath();
+            //if (null != file) {
+            //    loadCodeFromFile(file);
+            //}
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -36,12 +36,10 @@ public class RootLayoutController {
     private void handleOpen() {
         FileChooser fileChooser = new FileChooser();
 
-        // Set extension filter
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
                 "XML files (*.pas)", "*.pas");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        // Show save file dialog
         File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
 
         if (null != file) {
@@ -63,12 +61,10 @@ public class RootLayoutController {
     private void handleSaveAs() {
         FileChooser fileChooser = new FileChooser();
 
-        // Set extension filter
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
                 "XML files (*.pas)", "*.pas");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        // Show save file dialog
         File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
 
         if (null != file) {
