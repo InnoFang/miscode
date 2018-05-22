@@ -14,6 +14,8 @@ public enum TokenType {
     //ASSIGN(":="), LESS("<"), GREATER(">"), UNEQUAL("<>"), GEQUAL(">="), LEQUAL("<="),
     //EQUAL("=="), SEMI(";"), COLON(":"), LPAREN("("), RPAREN(")"), COMMA(","), EOF("EOF");
 
+    INVALID("不合法符号"),
+
     VAR("关键字：VAR"), INTEGER("声明常量类型：INTEGER"), LONGINT("声明常量类型：LONGINT"), REAL("声明常量类型：REAL"),
     BOOL("声明常量类型：BOOL"), IF("关键字：IF"), INTEGER_CONST("INTEGER 变量值"), LONGINT_CONST("LONGING 变量值"),
     REAL_CONST("REAL 变量值"), THEN("关键字：THEN"), ELSE("关键字：ELSE"), WHILE("关键字：WHILE"), DO("关键字：DO"),
@@ -25,6 +27,10 @@ public enum TokenType {
     String type;
 
     TokenType(String type) {
+        this.type = type;
+    }
+
+    public void setContent(String type) {
         this.type = type;
     }
 

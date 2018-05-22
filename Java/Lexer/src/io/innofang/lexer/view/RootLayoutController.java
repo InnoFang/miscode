@@ -92,6 +92,7 @@ public class RootLayoutController {
 
     @FXML
     public void handleRun() {
+        mainApp.getTokenData().clear();
         Lexer lexer = new Lexer(mainApp.getCode());
         Token token;
         while ((token = lexer.getNextToken()).getType() != TokenType.EOF) {

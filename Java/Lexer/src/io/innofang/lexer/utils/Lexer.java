@@ -1,5 +1,7 @@
 package io.innofang.lexer.utils;
 
+import io.innofang.lexer.exception.InvalidTokenException;
+import io.innofang.lexer.model.InvalidToken;
 import io.innofang.lexer.model.Token;
 import io.innofang.lexer.model.TokenType;
 
@@ -184,7 +186,11 @@ public class Lexer {
                 advance();
                 return new Token(TokenType.RPAREN, ")");
             }
-            throw new IllegalArgumentException("Invalid character");
+            InvalidToken token = new InvalidToken(currentChar);
+            advance();
+            return token;
+            //throw new InvalidTokenException(currentChar);
+
         }
         return new Token(TokenType.EOF, "EOF");
     }
