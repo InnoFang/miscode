@@ -49,7 +49,7 @@ public class InvalidToken extends Token {
 
         String content = "不合法符号：" + value;
         if (tips.length() > 0) {
-            content += "\n相似符号：" + tips.substring(0, tips.length() - 1);
+            content += "，相似符号：" + tips.substring(0, tips.length() - 1);
         }
         type.setContent(content);
         return type;
