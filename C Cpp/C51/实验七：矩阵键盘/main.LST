@@ -1,0 +1,88 @@
+C51 COMPILER V9.01   MAIN                                                                  06/25/2018 10:23:29 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #define GPIO_KEY P1
+   3          #define GPIO_DIG P0
+   4          
+   5          typedef unsigned char u8;
+   6          typedef unsigned int u16;
+   7          
+   8          sbit LSA=P2^2;
+   9          sbit LSB=P2^3;
+  10          sbit LSC=P2^4;
+  11          
+  12          u8 code smgduan[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07,
+  13                                                   0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71};
+  14          u8 KeyValue;
+  15          
+  16          void delay(u16 i) 
+  17          {
+  18   1              while(i--);
+  19   1      }
+  20          void KeyDown() 
+  21          {
+  22   1              u8 a=0;
+  23   1              GPIO_KEY=0x0f;
+  24   1              if (GPIO_KEY != 0x0f) 
+  25   1              {
+  26   2                      delay(1000);
+  27   2                      if (GPIO_KEY != 0x0f) 
+  28   2                      {
+  29   3                              GPIO_KEY=0x0f;
+  30   3                              switch(GPIO_KEY) 
+  31   3                              {
+  32   4                                      case 0x07: KeyValue=0; break;
+  33   4                                      case 0x0b: KeyValue=1; break;
+  34   4                                      case 0x0d: KeyValue=2; break;
+  35   4                                      case 0x0e: KeyValue=3; break;
+  36   4                              }
+  37   3                              GPIO_KEY=0xf0;
+  38   3                              switch(GPIO_KEY) 
+  39   3                              {
+  40   4                                      case 0x70: KeyValue=KeyValue; break;
+  41   4                                      case 0xb0: KeyValue=KeyValue+4; break;
+  42   4                                      case 0xd0: KeyValue=KeyValue+8; break;
+  43   4                                      case 0xe0: KeyValue=KeyValue+12; break;
+  44   4                              }
+  45   3                              while (a < 50 && GPIO_KEY != 0xf0) {
+  46   4                                      delay(1000);
+  47   4                                      a++;
+  48   4                              }
+  49   3                      }
+  50   2              }               
+  51   1      }
+  52          
+  53          void main()
+  54          {
+  55   1      
+C51 COMPILER V9.01   MAIN                                                                  06/25/2018 10:23:29 PAGE 2   
+
+  56   1              LSA=0;
+  57   1              LSB=0;
+  58   1              LSC=0;
+  59   1              while(1) {
+  60   2                      KeyDown();
+  61   2                      GPIO_DIG=smgduan[KeyValue];
+  62   2              }
+  63   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    160    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
