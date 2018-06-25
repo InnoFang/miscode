@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        06/25/2018  10:46:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/25/2018  15:08:20  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -25,10 +25,10 @@ LINK MAP OF MODULE:  template (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0013H     UNIT         ?PR?KEYPROS?MAIN
-            CODE    0016H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0022H     000BH     UNIT         ?PR?_DELAY?MAIN
-            CODE    002DH     0005H     UNIT         ?PR?MAIN?MAIN
+            CODE    0003H     0039H     UNIT         ?PR?KEYPROS?MAIN
+            CODE    003CH     000FH     UNIT         ?PR?_DELAY?MAIN
+            CODE    004BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0057H     0005H     UNIT         ?PR?MAIN?MAIN
 
 
 
@@ -59,41 +59,75 @@ SYMBOL TABLE OF MODULE:  template (MAIN)
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   C:0003H         PUBLIC        keypros
-BL51 BANKED LINKER/LOCATER V6.22                                                      06/25/2018  10:46:48  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/25/2018  15:08:20  PAGE 2
 
 
-  C:0022H         PUBLIC        _delay
+  C:0040H         PUBLIC        _delay
   B:00B0H.1       PUBLIC        k1
-  C:002DH         PUBLIC        main
-  B:00A0H.0       PUBLIC        led
+  B:00B0H.0       PUBLIC        k2
+  B:00B0H.2       PUBLIC        k3
+  B:00B0H.3       PUBLIC        k4
+  C:0057H         PUBLIC        main
+  B:00A0H.0       PUBLIC        led1
+  B:00A0H.1       PUBLIC        led2
+  B:00A0H.2       PUBLIC        led3
+  B:00A0H.3       PUBLIC        led4
+  C:003CH         SYMBOL        L?0026
+  -------         PROC          L?0025
+  -------         ENDPROC       L?0025
+  C:003CH         SYMBOL        L?0026
   -------         PROC          _DELAY
   D:0006H         SYMBOL        i
-  C:0022H         LINE#         7
-  C:0022H         LINE#         8
-  C:0022H         LINE#         9
-  C:002CH         LINE#         10
+  C:0040H         LINE#         15
+  C:0040H         LINE#         16
+  C:0040H         LINE#         17
+  C:004AH         LINE#         18
   -------         ENDPROC       _DELAY
   -------         PROC          KEYPROS
-  C:0003H         LINE#         11
-  C:0003H         LINE#         12
-  C:0003H         LINE#         13
-  C:0006H         LINE#         14
-  C:000DH         LINE#         15
-  C:0010H         LINE#         16
-  C:0012H         LINE#         17
-  C:0012H         LINE#         18
-  C:0015H         LINE#         19
-  C:0015H         LINE#         20
+  C:0003H         LINE#         19
+  C:0003H         LINE#         20
+  C:0003H         LINE#         21
+  C:0006H         LINE#         22
+  C:0009H         LINE#         23
+  C:000CH         LINE#         24
+  C:000EH         LINE#         25
+  C:000EH         LINE#         26
+  C:0011H         LINE#         27
+  C:0011H         LINE#         28
+  C:0014H         LINE#         29
+  C:0017H         LINE#         30
+  C:001AH         LINE#         31
+  C:001CH         LINE#         32
+  C:001CH         LINE#         33
+  C:001FH         LINE#         34
+  C:001FH         LINE#         35
+  C:0022H         LINE#         36
+  C:0025H         LINE#         37
+  C:0028H         LINE#         38
+  C:002AH         LINE#         39
+  C:002AH         LINE#         40
+  C:002DH         LINE#         41
+  C:002DH         LINE#         42
+  C:0030H         LINE#         43
+  C:0033H         LINE#         44
+  C:0036H         LINE#         45
+  C:0038H         LINE#         46
+  C:0038H         LINE#         47
+  C:003BH         LINE#         48
+  C:003BH         LINE#         49
   -------         ENDPROC       KEYPROS
   -------         PROC          MAIN
-  C:002DH         LINE#         21
-  C:002DH         LINE#         22
-  C:002DH         LINE#         23
-  C:002DH         LINE#         24
-  C:002DH         LINE#         25
-  C:0030H         LINE#         26
+  C:0057H         LINE#         50
+  C:0057H         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/25/2018  15:08:20  PAGE 3
+
+
+  C:0057H         LINE#         52
+  C:0057H         LINE#         53
+  C:0057H         LINE#         54
+  C:005AH         LINE#         55
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-Program Size: data=9.0 xdata=0 code=50
+Program Size: data=9.0 xdata=0 code=92
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
