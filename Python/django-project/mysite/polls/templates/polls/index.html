@@ -2,7 +2,8 @@
     <ul>
         {% for question in latest_question_list %}
             <!-- <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> -->
-            <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+            <!-- 'detail' is the url's name and the question.id is the fucntion's parameter, which are defined in the urls.py -->
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
