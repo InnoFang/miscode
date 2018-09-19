@@ -22,7 +22,7 @@ import random
 nsteps = 1000
 draws = np.random.randint(0, 2, size=nsteps)
 steps = np.where(draws > 0, 1, -1)
-walk = steps.cumsum()
+walk = steps.cumsum() # cumulative sum of the steps
 
 print('the minium of steps : ', walk.min())
 print('the maxinum of steps : ', walk.max())

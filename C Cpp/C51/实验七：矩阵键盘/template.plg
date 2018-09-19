@@ -3,57 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-F:\keil\ µ—È∆ﬂ£∫æÿ’Ûº¸≈Ã\template.uvproj
+F:\Github\playground\C Cpp\C51\ µ—È∆ﬂ£∫æÿ’Ûº¸≈Ã\template.uvproj
 Project File Date:  05/16/2018
 
 <h2>Output:</h2>
-Build target 'Target 1'
-compiling main.c...
-MAIN.C(5): error C202: 'p2': undefined identifier
-MAIN.C(6): error C202: 'p2': undefined identifier
-MAIN.C(7): error C202: 'p2': undefined identifier
-MAIN.C(14): error C202: 'LSA': undefined identifier
-MAIN.C(15): error C202: 'LSB': undefined identifier
-MAIN.C(16): error C202: 'LSC': undefined identifier
-MAIN.C(17): error C202: 'p0': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-MAIN.C(5): error C202: 'p2': undefined identifier
-MAIN.C(6): error C202: 'p2': undefined identifier
-MAIN.C(7): error C202: 'p2': undefined identifier
-MAIN.C(14): error C202: 'LSA': undefined identifier
-MAIN.C(15): error C202: 'LSB': undefined identifier
-MAIN.C(16): error C202: 'LSC': undefined identifier
-MAIN.C(17): error C202: 'p0': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-MAIN.C(5): error C202: 'p2': undefined identifier
-MAIN.C(6): error C202: 'p2': undefined identifier
-MAIN.C(7): error C202: 'p2': undefined identifier
-MAIN.C(14): error C202: 'LSA': undefined identifier
-MAIN.C(15): error C202: 'LSB': undefined identifier
-MAIN.C(16): error C202: 'LSC': undefined identifier
-MAIN.C(17): error C202: 'p0': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-linking...
-Program Size: data=9.0 xdata=0 code=46
-creating hex file from "template"...
-"template" - 0 Error(s), 0 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-MAIN.C(45): error C202: 'GPIO_KEy': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-MAIN.C(45): error C202: 'GPIO_KEy': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-linking...
-Program Size: data=11.0 xdata=0 code=191
-creating hex file from "template"...
-"template" - 0 Error(s), 0 Warning(s).

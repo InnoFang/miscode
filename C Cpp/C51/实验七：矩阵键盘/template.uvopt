@@ -172,10 +172,10 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>28</ColumnNumber>
+      <ColumnNumber>16</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>33</TopLine>
-      <CurrentLine>45</CurrentLine>
+      <TopLine>31</TopLine>
+      <CurrentLine>31</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -1553,9 +1553,9 @@
       <Documents>
         <Doc>
           <Name>.\main.c</Name>
-          <ColumnNumber>28</ColumnNumber>
-          <TopLine>33</TopLine>
-          <CurrentLine>45</CurrentLine>
+          <ColumnNumber>16</ColumnNumber>
+          <TopLine>31</TopLine>
+          <CurrentLine>31</CurrentLine>
         </Doc>
         <Doc>
           <Name>D:\KEIL\C51\INC\ATMEL\REG51.H</Name>

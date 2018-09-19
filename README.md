@@ -1,6 +1,6 @@
-# Practices
+# Playground
 
-The usual practice of learning.
+Just storing my own learning code. There is nothing to learn from, and most of them are not good or  basic.
 
 # [Lincese](https://github.com/InnoFang/Practices/blob/master/LICENSE)
 
