@@ -8,15 +8,15 @@ def hello():
 
 students = []
 
-@app.route('/students/', methods=['POST',])
+@app.route('/students', methods=['POST',])
 def add_student():
-    # if not request.json:
-    #     abort(400)
+    if not request.json:
+        abort(400)
 
-    # item = ['id', 'name', 'age', 'birthplace', 'grade']
-    # for i in item:
-    #     if not i in request.json:
-    #         abort(400)
+    item = ['id', 'name', 'age', 'birthplace', 'grade']
+    for i in item:
+        if not i in request.json:
+            abort(400)
     
     student = {
         'id': request.json['id'],
