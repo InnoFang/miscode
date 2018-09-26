@@ -1,6 +1,11 @@
-from app import db
+from app import db, login
 from datetime import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
+
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 
 class User(db.Model):
