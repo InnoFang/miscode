@@ -13,5 +13,4 @@ login = LoginManager(app)
 # 'login'值是登录视图函数（endpoint）名，换句话说该名称可用于url_for()函数的参数并返回对应的URL
 login.login_view = 'login'
 
-
-from app import routes, models
+from app import routes, models, errors
