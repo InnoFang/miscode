@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # rename your files
-# If your file contain a space, please remove it before
+# If your file contain a space, please remove it before you this script
 
 for file in `ls | grep .txt`    
 do
