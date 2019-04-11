@@ -4,7 +4,7 @@ import time
 from collections import defaultdict
 
 lines = 0
-pattern = re.compile('.*\.(py|java||c|cpp|js|pde|kt)$')
+pattern = re.compile('.*\.(py|java||c|cpp|js|pde|kt|dart)$')
 file_dict = defaultdict(int)
 
 
@@ -60,7 +60,7 @@ def main():
  
     totally = 0
 
-    # py|java|c|cpp|js|pde|kt
+    # py|java||c|cpp|js|pde|kt|dart
     for _, count in file_dict.items():
         totally += count
     for tp, count in file_dict.items():
@@ -71,14 +71,14 @@ def main():
 if __name__ == '__main__':
     main()
     """
-    Total number of lines of code:  2288741
-    The number of  java  file:  3592  , ratio is 64.86%
-    The number of  cpp  file:  76  , ratio is 1.37%
-    The number of  c  file:  39  , ratio is 0.70%
-    The number of  clj  file:  5  , ratio is 0.09%
-    The number of  pde  file:  77  , ratio is 1.39%
-    The number of  html  file:  231  , ratio is 4.17%
-    The number of  py  file:  1314  , ratio is 23.73%
-    The number of  kt  file:  204  , ratio is 3.68%
-    Totally cost:  10.928016424179077 s
+    Total number of lines of code:  181840
+    The number of  c  file:  29  , ratio is 1.26%
+    The number of  cpp  file:  129  , ratio is 5.61%
+    The number of  java  file:  1409  , ratio is 61.31%
+    The number of  js  file:  83  , ratio is 3.61%
+    The number of  kt  file:  289  , ratio is 12.58%
+    The number of  py  file:  263  , ratio is 11.44%
+    The number of  pde  file:  85  , ratio is 3.70%
+    The number of  dart  file:  11  , ratio is 0.48%
+    Totally cost:  3.1801540851593018 s
     """
