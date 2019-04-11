@@ -4,7 +4,7 @@ import time
 from collections import defaultdict
 
 lines = 0
-pattern = re.compile('.*\.(py|java|clj|html|c|cpp|js|pde|kt)$')
+pattern = re.compile('.*\.(py|java||c|cpp|js|pde|kt)$')
 file_dict = defaultdict(int)
 
 
@@ -38,34 +38,29 @@ def listDir(path):
 
 def main():
     global lines
-    time_start = time.time()
-    print('--- searching and counting ---')
-    listDir('F:/AS Project/GankIODemo')
-    listDir('F:/AS Project/AutoSMS')
-    listDir('F:/HTML')
-    listDir('F:/IDEA/Quantify')
-    listDir('F:/IDEA/TSDMS')
-    listDir('F:/IDEA/LearnKotlin')
-    listDir('F:/IDEA Project/Design Patterns')
-    listDir('F:/IDEA Project/LanQiao')
-    listDir('F:/IDEA/Algorithms')
-    listDir('F:/PyCharm Project/Algo4ML')
-    listDir('F:/MyApplication')
-    listDir('F:/opencv3_project')
-    listDir('F:/Github/playground')
-    listDir('F:/python')
-    listDir('F:/repositories/ChangTuTest')
-    listDir('F:/repositories/Android-Code')
-    listDir('F:/repositories/KoolWeather')
-    listDir('F:/repositories/ProtectPlus')
-    listDir('F:/repositories/PartyBuildingStudies')
-    listDir('F:/Processing Project/AlgorithmVisualizer')
-    listDir('F:/train')
+
+    filepath = './filelist.txt'
+
+    if not os.path.exists(filepath):
+        print('{} is not exist, please create it and add some file path you want to count.'.format(filepath))
+        exit(0)
+ 
+    with open(filepath) as file:
+        time_start = time.time()
+        print('--- searching and counting ---')
+        for line in file.readlines():
+            line = line.strip()
+            if os.path.exists(line):
+                listDir(line)
+            else:
+                print('{} is not a validate path.'.format(line))
+        time_end = time.time()
+    
     print('Total number of lines of code: ', lines)
-    time_end = time.time()
+ 
     totally = 0
 
-    # py|java|clj|html|c|cpp|js|pde|kt
+    # py|java|c|cpp|js|pde|kt
     for _, count in file_dict.items():
         totally += count
     for tp, count in file_dict.items():
