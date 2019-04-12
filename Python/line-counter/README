@@ -1,0 +1,8 @@
+Usage: python line-counter.py <input file> <output file>
+
+TIPS: for the format of input file, it's content should be a list of file path (or directory path), just as follow:
+
+    F:/Github/Android
+    F:/Github/Java
+    F:/Github/Python/line-counter/line-counter.py
+    ...
