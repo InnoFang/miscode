@@ -1,22 +1,13 @@
-# Playground
+# MISC CODE
+
+```
+   _____  .___  __________________   _________  ________  ________  ___________
+  /     \ |   |/   _____/\_   ___ \  \_   ___ \ \_____  \ \______ \ \_   _____/
+ /  \ /  \|   |\_____  \ /    \  \/  /    \  \/  /   |   \ |    |  \ |    __)_ 
+/    Y    \   |/        \\     \____ \     \____/    |    \|    `   \|        \
+\____|__  /___/_______  / \______  /  \______  /\_______  /_______  /_______  /
+        \/            \/         \/          \/         \/        \/        \/ 
+                                                                               
+```
 
 Just storing my own learning code. There is nothing to learn from, and most of them are not good or  basic.
-
-# [Lincese](https://github.com/InnoFang/Practices/blob/master/LICENSE)
-
-```
-
-   Copyright 2017 InnoFang
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-```
