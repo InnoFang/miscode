@@ -1,6 +1,4 @@
-## Hadoop 
+## Hadoop Demos
 
- + [hadooptrain](./hadooptrain) 
-   
-   Humm, training on Hadoop
+write and store some demos about hadoop practice or other hadoop ecosystem framework.
 
