@@ -9,7 +9,11 @@ object OOTest {
   }
 }
 
-class Person(val name: String, var age: Int) {
+abstract class Animal {
+  def eat()
+}
+
+class Person(val name: String, var age: Int) extends Animal {
   var gender: String = _
 
   def this(name: String, age: Int, gender: String) {
@@ -17,7 +21,7 @@ class Person(val name: String, var age: Int) {
     this.gender = gender
   }
 
-  def eat(): Unit = {
+  override def eat(): Unit = {
     println(name + " eat something ...")
   }
 }
