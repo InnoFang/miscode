@@ -1,0 +1,30 @@
+package io.github.innofang
+
+import scala.collection.mutable.ListBuffer
+
+object ListTest extends App {
+  println(Nil)  // Nil 就是一个空的 List
+
+  // 定长 List
+  val list1 = List(1, 2, 3, 4, 5)
+  println(list1.head) // 1
+  println(list1.tail) // (2, 3, 4, 5)
+
+  // 字符串拼接符号
+  val list2 = 1 :: Nil
+  println(list2)
+
+  // 变长 List
+  val list3 = ListBuffer[Int]()
+  list3 += 1
+  list3 += (2, 3)
+  list3 ++= List(4, 5, 6)
+
+  list3 -= 2    // 删除元素 2
+  list3 -= 3    // 删除元素 3
+  list3 -= (1, 4) // 删除元素 1 和 4
+  list3 --= List(5, 6)
+  list3 --= List(5, 8)  // 删除的元素不存在也不会出问题
+  
+  println(list3)
+}
