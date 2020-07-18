@@ -12,6 +12,14 @@ def matchNode(graph, node):
     matcher = NodeMatcher(graph)
     return matcher.match(node.label).where(m_n).first()
 
+def getNodeById(graph, id):
+    matcher = NodeMatcher(graph)
+    return matcher.get(id)
+
+def matchNodeByLabel(graph, label):
+    matcher = NodeMatcher(graph)
+    return matcher.match(label)
+
 def createNode(graph, node):
     # check the node exists or not before create it
     match = matchNode(graph, node)
@@ -38,8 +46,8 @@ def main():
     ]
 
     # Step 1:  Create some Nodes
-    # for node in nodes:
-    #     createNode(graph, node)
+    for node in nodes:
+        createNode(graph, node)
 
     # Step 2: Create a Relationship
     createRelationship(graph, nodes[0], 'StockExchange', nodes[1])
