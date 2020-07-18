@@ -2,9 +2,7 @@
 
 from py2neo import Node, Relationship, Graph, NodeMatcher, RelationshipMatcher
 
-
-
-class Node:
+class MyNode:
     def __init__(self, label, attrs):
         self.label = label
         self.attrs = attrs
@@ -35,8 +33,8 @@ def main():
     graph = Graph('http://localhost:7474/', username='neo4j', password='123123')
 
     nodes = [
-        Node(label='Stock', attrs={'name': 'CMB', 'code': '600036'}), 
-        Node(label='SecuritiesExchange', attrs={'name': 'ShanghaiStockExchange'}), 
+        MyNode(label='Stock', attrs={'name': 'CMB', 'code': '600036'}), 
+        MyNode(label='SecuritiesExchange', attrs={'name': 'ShanghaiStockExchange'}), 
     ]
 
     # Step 1:  Create some Nodes
