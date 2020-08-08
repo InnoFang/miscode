@@ -1,7 +1,6 @@
 import numpy as np
 
-def f(x):
-    return np.sum(x ** 2)
+f = lambda x: np.sum(x ** 2)
 
 def numerical_gradient(f, x):
     h = 1e-4
