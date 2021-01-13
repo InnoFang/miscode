@@ -20,7 +20,7 @@
   </build>
 
   <properties>
-    <org.springframework.version>4.3.18</org.springframework.version>
+    <org.springframework.version>5.2.9.RELEASE</org.springframework.version>
     <mysql.connector.version>5.1.44-bin</mysql.connector.version>
   </properties>
 
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.10</version>
+      <version>4.13.1</version>
       <!--<type></type>-->
       <!-- scope 依赖范围，描述在什么范围内该依赖有用 -->
       <!--<scope></scope>-->
