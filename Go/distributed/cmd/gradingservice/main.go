@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"distributed/grades"
 	"distributed/log"
 	"distributed/registry"
 	"distributed/service"
@@ -10,14 +11,13 @@ import (
 )
 
 func main() {
-	log.Run("./distributed.log")
-	host, port := "localhost", "4000"
+	host, port := "localhost", "6000"
+	serviceAddress := fmt.Sprintf("http://%v:%v", host, port)
 
-	serviceAddress := fmt.Sprintf("http://%s:%s", host, port)
 	r := registry.Registration{
-		ServiceName: registry.LogService,
+		ServiceName: registry.GradingService,
 		ServiceURL: serviceAddress,
-		RequiredServices: make([]registry.ServiceName, 0),
+		RequiredServices: []registry.ServiceName{registry.LogService},
 		ServiceUpdateURL: serviceAddress + "/services",
 	}
 
@@ -26,12 +26,17 @@ func main() {
 		host,
 		port,
 		r,
-		log.RegisterHandlers,
+		grades.RegisterHandlers,
 	)
 
 	if err != nil {
 		// If the custom log service doesn't launch successfully, use the standard log supported by Go
 		stlog.Fatalln(err)
+	}
+
+	if logProvider, err := registry.GetProvider(registry.LogService); err == nil {
+		fmt.Printf("Loggin service found at: %s\n", logProvider)
+		log.SetClientLogger(logProvider, r.ServiceName)
 	}
 
 	// when getting the cancel signal from the goroutines, end log service
