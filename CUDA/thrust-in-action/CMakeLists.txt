@@ -14,3 +14,6 @@ set_target_properties(thrust03 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(thrust04 thrust04.cu)
 set_target_properties(thrust04 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(thrust05 thrust05.cu)
+set_target_properties(thrust05 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
