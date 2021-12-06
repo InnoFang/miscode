@@ -21,13 +21,15 @@ static void HandleError(cudaError_t err, const char *file=__FILE__, int line=__L
     }
 }
 
+#define HANDLE_ERROR(err) (HandleError(err, __FILE__, __LINE__))
+
 int getThreadNum() {
     cudaDeviceProp prop;
     int count;
 
-    HandleError( cudaGetDeviceCount(&count) );
+    HANDLE_ERROR( cudaGetDeviceCount(&count) );
     printf("GPU device count is %d\n", count);
-    HandleError( cudaGetDeviceProperties(&prop, 0) );
+    HANDLE_ERROR( cudaGetDeviceProperties(&prop, 0) );
     printf("Warp size is %d\n", prop.warpSize);
     printf("Max thread number per block is %d\n", prop.maxThreadsPerBlock);
     printf("Max block number per MultiProcessor is %d\n", prop.maxBlocksPerMultiProcessor);
@@ -76,12 +78,12 @@ int main() {
 
 
     real *img_d, *kernel_d, *result_d;
-    HandleError( cudaMalloc((void**)&img_d, WIDTH * HEIGHT * sizeof(real)) );
-    HandleError( cudaMalloc((void**)&kernel_d, kernel_size * sizeof(real)) );
-    HandleError( cudaMalloc((void**)&result_d, WIDTH * HEIGHT * sizeof(real)) );
+    HANDLE_ERROR( cudaMalloc((void**)&img_d, WIDTH * HEIGHT * sizeof(real)) );
+    HANDLE_ERROR( cudaMalloc((void**)&kernel_d, kernel_size * sizeof(real)) );
+    HANDLE_ERROR( cudaMalloc((void**)&result_d, WIDTH * HEIGHT * sizeof(real)) );
 
-    HandleError( cudaMemcpy(img_d, img, WIDTH * HEIGHT * sizeof(real), cudaMemcpyHostToDevice) );
-    HandleError( cudaMemcpy(kernel_d, kernel, kernel_size * sizeof(real), cudaMemcpyHostToDevice) );
+    HANDLE_ERROR( cudaMemcpy(img_d, img, WIDTH * HEIGHT * sizeof(real), cudaMemcpyHostToDevice) );
+    HANDLE_ERROR( cudaMemcpy(kernel_d, kernel, kernel_size * sizeof(real), cudaMemcpyHostToDevice) );
 
     /* COMPUTING */
 
@@ -90,7 +92,7 @@ int main() {
     conv<<<block_num, thread_num>>>(img_d, kernel_d, result_d, kernel_dim);
 
     real *result = new real[WIDTH * HEIGHT];
-    HandleError( cudaMemcpy(result, result_d, WIDTH * HEIGHT * sizeof(real), cudaMemcpyDeviceToHost) );
+    HANDLE_ERROR( cudaMemcpy(result, result_d, WIDTH * HEIGHT * sizeof(real), cudaMemcpyDeviceToHost) );
 
     /* DISPLAY */
 

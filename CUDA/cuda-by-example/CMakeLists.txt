@@ -6,8 +6,8 @@ set(CMAKE_CUDA_STANDARD 14)
 add_executable(basis basis.cu)
 set_target_properties(basis PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
-add_executable(convolution convolution.cu)
-set_target_properties(convolution PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+add_executable(conv conv.cu)
+set_target_properties(conv PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(calc_pi calc_pi.cu)
 set_target_properties(calc_pi PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
