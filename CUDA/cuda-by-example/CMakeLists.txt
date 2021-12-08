@@ -11,3 +11,6 @@ set_target_properties(conv PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(calc_pi calc_pi.cu)
 set_target_properties(calc_pi PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(matmul matmul.cu)
+set_target_properties(matmul PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
