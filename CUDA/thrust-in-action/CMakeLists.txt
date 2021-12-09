@@ -20,3 +20,10 @@ set_target_properties(thrust05 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(thrust06 thrust06.cu)
 set_target_properties(thrust06 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(thrust07 thrust07.cu)
+set_target_properties(thrust07 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(thrust08 thrust08.cu)
+set_target_properties(thrust08 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
