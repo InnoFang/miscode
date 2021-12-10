@@ -14,7 +14,7 @@
 #define HEIGHT 1080
 #define real float
 
-static void HandleError(cudaError_t err, const char *file=__FILE__, int line=__LINE__) {
+static void HandleError(cudaError_t err, const char *file, int line) {
     if (err != cudaSuccess) {
         printf("%s in %s at line %d\n", cudaGetErrorString(err), file, line);
         exit(EXIT_FAILURE);
