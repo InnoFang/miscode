@@ -1,9 +1,9 @@
 /*
- * @FileName   : basis.cu 
+ * @FileName   : matmul.cu
  * @CreateAt   : 2021/12/8
  * @Author     : Inno Fang
  * @Email      : innofang@yeah.net
- * @Description: 
+ * @Description: implement matrix multiply in CUDA
  */
 #include <cstdio>
 

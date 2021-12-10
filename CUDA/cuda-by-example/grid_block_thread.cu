@@ -1,9 +1,10 @@
 /*
- * @FileName   : hello.cu 
+ * @FileName   : grid_block_thread.cu
  * @CreateAt   : 2021/12/10
  * @Author     : Inno Fang
  * @Email      : innofang@yeah.net
- * @Description: 
+ * @Description: learn how to get thread id in vary
+ *               the dimension of the grid and the dimension of the block
  */
 
 #include <cstdio>

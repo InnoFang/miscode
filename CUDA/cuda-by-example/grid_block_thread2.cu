@@ -3,7 +3,8 @@
  * @CreateAt   : 2021/12/10
  * @Author     : Inno Fang
  * @Email      : innofang@yeah.net
- * @Description: 
+ * @Description: implement the way of getting the thread id in vary
+ *               the dimension of the grid and the dimension of the block
  */
 
 #include <cstdio>

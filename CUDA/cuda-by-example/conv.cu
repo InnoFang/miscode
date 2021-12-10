@@ -1,9 +1,9 @@
 /*
- * @FileName   : basis.cu 
+ * @FileName   : conv.cu
  * @CreateAt   : 2021/12/6
  * @Author     : Inno Fang
  * @Email      : innofang@yeah.net
- * @Description: 
+ * @Description: implement basic convolution in CUDA
  */
 #include <iostream>
 

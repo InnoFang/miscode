@@ -1,9 +1,9 @@
 /*
- * @FileName   : basis.cu 
+ * @FileName   : calc_pi.cu
  * @CreateAt   : 2021/12/6
  * @Author     : Inno Fang
  * @Email      : innofang@yeah.net
- * @Description: 
+ * @Description: calculate PI by monte calo in CUDA
  */
 #include <iostream>
 #include <ctime>
