@@ -10,12 +10,14 @@
 
 #define N 1000000
 #define real float
+
+// stride loop in case the thread are not enough in a single block
 #define CUDA_KERNEL_LOOP(i, n) \
         for (int i = blockIdx.x * blockDim.x + threadIdx.x; \
             i < (n);           \
             i += blockDim.x * gridDim.x)
 
-static void HandleError(cudaError_t err, const char *file=__FILE__, int line=__LINE__) {
+inline void HandleError(cudaError_t err, const char *file, int line) {
     if (err != cudaSuccess) {
         printf("%s in %s at line %d\n", cudaGetErrorString(err), file, line);
         exit(EXIT_FAILURE);
