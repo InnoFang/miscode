@@ -70,9 +70,11 @@ int main() {
     dim3 threads(16, 16, 1);
     dim3 blocks((N + threads.x - 1) / threads.x, (N + threads.y - 1) / threads.y, 1);
 
-    gpu<<<blocks, threads>>>(a, b, c_gpu);
-    cudaDeviceSynchronize();
     cpu(a, b, c_cpu);
+
+    gpu<<<blocks, threads>>>(a, b, c_gpu);
+    HANDLE_ERROR( cudaGetLastError() );
+    HANDLE_ERROR( cudaDeviceSynchronize() );
 
     check(c_cpu, c_gpu) ? printf("passed\n") : printf("failed\n");
 
