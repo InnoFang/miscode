@@ -42,7 +42,7 @@ int main() {
     // 声明流和GPU Buffer的指针
     cudaStream_t stream0, stream1;
     int *host_a, *host_b, *host_c;
-    int *dev_a0, *dev_b0, *dev_c0,
+    int *dev_a0, *dev_b0, *dev_c0;
     int *dev_a1, *dev_b1, *dev_c1;
 
     // 创建计时器
