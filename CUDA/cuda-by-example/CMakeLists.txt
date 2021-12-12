@@ -26,3 +26,6 @@ set_target_properties(matadd PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(device_props device_props.cu)
 set_target_properties(device_props PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(single_stream single_stream.cu)
+set_target_properties(single_stream PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
