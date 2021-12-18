@@ -3,6 +3,8 @@ project(cuda_by_example CUDA)
 
 set(CMAKE_CUDA_STANDARD 14)
 
+add_definitions(-arch=sm_75)
+
 add_executable(grid_block_thread grid_block_thread.cu)
 set_target_properties(grid_block_thread PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
@@ -15,7 +17,7 @@ set_target_properties(conv PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 add_executable(calc_pi calc_pi.cu)
 set_target_properties(calc_pi PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
-add_executable(matmul matmul.cu)
+add_executable(matmul matrix_mul.cu)
 set_target_properties(matmul PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(matadd matadd.cu)
