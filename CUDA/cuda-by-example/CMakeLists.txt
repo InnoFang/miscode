@@ -20,7 +20,7 @@ set_target_properties(calc_pi PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 add_executable(matmul matrix_mul.cu)
 set_target_properties(matmul PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
-add_executable(matadd matadd.cu)
+add_executable(matadd matrix_add.cu)
 set_target_properties(matadd PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(device_props device_props.cu)
