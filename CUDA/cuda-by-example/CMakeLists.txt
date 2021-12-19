@@ -17,11 +17,14 @@ set_target_properties(conv PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 add_executable(calc_pi calc_pi.cu)
 set_target_properties(calc_pi PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
-add_executable(matmul matrix_mul.cu)
-set_target_properties(matmul PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+add_executable(matrix_mul matrix_mul.cu)
+set_target_properties(matrix_mul PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
-add_executable(matadd matrix_add.cu)
-set_target_properties(matadd PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+add_executable(matrix_add matrix_add.cu)
+set_target_properties(matrix_add PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+
+add_executable(matrix_transpose matrix_transpose.cu)
+set_target_properties(matrix_transpose PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(device_props device_props.cu)
 set_target_properties(device_props PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
