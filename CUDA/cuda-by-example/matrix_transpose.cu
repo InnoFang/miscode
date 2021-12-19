@@ -29,7 +29,7 @@ typedef float real;
 
 #define NUM_REPEATS 10
 #define TILE_DIM 32
-#define N 128
+#define N 10000
 #define N2 (N * N)
 
 __global__
@@ -62,6 +62,46 @@ void transpose3(const real *A, real *B) {
     }
 }
 
+__global__
+void transpose4(const real *A, real *B) {
+    __shared__ real S[TILE_DIM][TILE_DIM];
+    unsigned int bx = blockIdx.x * TILE_DIM;
+    unsigned int by = blockIdx.y * TILE_DIM;
+
+    unsigned int nx1 = bx + threadIdx.x;
+    unsigned int ny1 = by + threadIdx.y;
+    if (nx1 < N && ny1 < N) {
+        S[threadIdx.y][threadIdx.x] = A[ny1 * N + nx1];
+    }
+    __syncthreads();
+
+    unsigned int nx2 = bx +threadIdx.x;
+    unsigned int ny2 = by +threadIdx.y;
+    if (nx2 < N && ny2 < N) {
+        B[nx2 * N + ny2] = S[threadIdx.x][threadIdx.y];
+    }
+}
+
+__global__
+void transpose5(const real *A, real *B) {
+    __shared__ real S[TILE_DIM][TILE_DIM + 1];
+    unsigned int bx = blockIdx.x * TILE_DIM;
+    unsigned int by = blockIdx.y * TILE_DIM;
+
+    unsigned int nx1 = bx + threadIdx.x;
+    unsigned int ny1 = by + threadIdx.y;
+    if (nx1 < N && ny1 < N) {
+        S[threadIdx.y][threadIdx.x] = A[ny1 * N + nx1];
+    }
+    __syncthreads();
+
+    unsigned int nx2 = bx +threadIdx.x;
+    unsigned int ny2 = by +threadIdx.y;
+    if (nx2 < N && ny2 < N) {
+        B[nx2 * N + ny2] = S[threadIdx.x][threadIdx.y];
+    }
+}
+
 void timing(const real *d_A, real *d_B, const int task) {
     const unsigned grid_size_x = (N + TILE_DIM - 1) / TILE_DIM;
     const unsigned grid_size_y = grid_size_x;
@@ -80,6 +120,8 @@ void timing(const real *d_A, real *d_B, const int task) {
         if (task == 1) transpose1<<<grid_size, block_size>>>(d_A, d_B);
         else if (task == 2) transpose2<<<grid_size, block_size>>>(d_A, d_B);
         else if (task == 3) transpose3<<<grid_size, block_size>>>(d_A, d_B);
+        else if (task == 4) transpose4<<<grid_size, block_size>>>(d_A, d_B);
+        else if (task == 5) transpose5<<<grid_size, block_size>>>(d_A, d_B);
         else {
             printf("Error: wrong task\n");
             exit(1);
@@ -105,7 +147,6 @@ void timing(const real *d_A, real *d_B, const int task) {
     const float t_err = sqrt(t2_sum / NUM_REPEATS - t_ave * t_ave);
     printf("Time = %g +- %g ms.", t_ave, t_err);
 }
-
 
 void print_matrix(const real *A) {
     for (int ny = 0; ny < N; ny++) {
@@ -134,6 +175,10 @@ int main() {
     timing(d_A, d_B, 2);
     printf("\ntranspose with coalesced write and __ldg read:\n");
     timing(d_A, d_B, 3);
+    printf("\ntranspose with shared memory bank conflict:\n");
+    timing(d_A, d_B, 4);
+    printf("\ntranspose without shared memory bank conflict:\n");
+    timing(d_A, d_B, 5);
 
     CHECK(cudaMemcpy(h_B, d_B, M, cudaMemcpyDeviceToHost));
     if (N <= 10) {
