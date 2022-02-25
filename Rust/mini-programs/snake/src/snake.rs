@@ -60,14 +60,14 @@ impl Snake {
     }
 
     pub fn draw(&self, con: &Context, g: &mut G2d) {
-        for block ni &self.body {
+        for block in &self.body {
             draw_block(SNAKE_COLOR, block.x, block.y, con, g);
         }
     }
 
-    pub fn head_postition(&self) -> (i32, i32) {
+    pub fn head_position(&self) -> (i32, i32) {
         let head_block = self.body.front().unwrap();
-        (head_blcok.x, head_blcok.y)
+        (head_block.x, head_block.y)
     }
 
     pub fn move_forward(&mut self, dir: Option<Direction>) {
@@ -76,9 +76,9 @@ impl Snake {
             None => (),
         }
 
-        let (last_x, last_y): (i32, i32) = self.head_postition;
+        let (last_x, last_y): (i32, i32) = self.head_position();
 
-        let new_block = match self.diretion {
+        let new_block = match self.direction {
             Direction::Up => Block {
                 x: last_x,
                 y: last_y - 1,
@@ -105,7 +105,7 @@ impl Snake {
         self.direction
     }
 
-    pub fn next_head(&self, dir: Option<Direciton>) -> (i32, i32) {
+    pub fn next_head(&self, dir: Option<Direction>) -> (i32, i32) {
         let (head_x, head_y): (i32, i32) = self.head_position();
 
         let mut moving_dir = self.direction;
