@@ -10,6 +10,7 @@ The most commonly used git commands are:
     commit      Record changes to the repository
     fetch       Download objects and refs from another repository
 """)
+        parser.add_argument("--version", action="version", version="%(prog)s version {}".format("0.1"))
         parser.add_argument("command", help="Subcommand to run")
         # parse_args defaults to [1:] for args, but you need to
         # exclude the rest of the args too, or validation will fail
