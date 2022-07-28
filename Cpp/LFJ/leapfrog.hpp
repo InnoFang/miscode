@@ -24,18 +24,7 @@ inline RandomAccessIterator leapfrogSeek(RandomAccessIterator first, RandomAcces
 
     int halfBound = bound / 2;
     // 3. Now that we have found the interval of interset, let's run a binary search
-    it = std::upper_bound(first + halfBound, last, val);
-
-    // 4. Sadly the upper_bound procedure returns the first element "greater than"
-    //    and not "greater or equal than" so we correct this below.
-    if (it == first) {
-        return it;
-    }
-    it--;
-    if (*it == val) {
-        return it;
-    } 
-    return ++it;
+    return std::lower_bound(first + halfBound, last, val);
 }
 
 template<template<class...> class C, 
