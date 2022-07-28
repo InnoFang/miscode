@@ -1,6 +1,7 @@
 #ifndef __LEAPFROG_HPP__
 #define __LEAPFROG_HPP__
 
+#include <iostream>
 #include <algorithm>
 #include <vector>
 
@@ -15,13 +16,13 @@ inline RandomAccessIterator leapfrogSeek(RandomAccessIterator first, RandomAcces
         bound *= 2;
         it = first + bound;
     }
-    int halfBound = bound / 2;
 
     // 2. We now check if the found upper bound is less than the end of the array
     if ((it + bound) < last) {
         last = it + bound;
     }
 
+    int halfBound = bound / 2;
     // 3. Now that we have found the interval of interset, let's run a binary search
     it = std::upper_bound(first + halfBound, last, val);
 
@@ -30,17 +31,17 @@ inline RandomAccessIterator leapfrogSeek(RandomAccessIterator first, RandomAcces
     if (it == first) {
         return it;
     }
-    -- it;
+    it--;
     if (*it == val) {
         return it;
     } 
-    return ++ it;
+    return ++it;
 }
 
 template<template<class...> class C, 
         class... A,
         class T = typename C<A...>::value_type,
-        class RandomAcessIterator = typename C<A...>::iterator>
+        class RandomAccessIterator = typename C<A...>::iterator>
 void leapfrogJoin(std::vector<C<A...>> &indexes, std::vector<T> &resultSet) {
     // 1. Check if any index is empty -> Intersection empty
     for (auto &index: indexes) {
@@ -54,14 +55,13 @@ void leapfrogJoin(std::vector<C<A...>> &indexes, std::vector<T> &resultSet) {
         [](const C<A...> &a, const C<A...> &b) { return *a.begin() < *b.begin(); }
     );
 
-    RandomAcessIterator its[indexes.size()];
+    RandomAccessIterator its[indexes.size()];
     for (int i = 0; i < indexes.size(); ++ i) {
         its[i] = indexes[i].begin();
     }
 
     T max = *(its[indexes.size() - 1]);
     int it = 0;
-
 
     // 3. execute the join
     T value;
@@ -71,7 +71,7 @@ void leapfrogJoin(std::vector<C<A...>> &indexes, std::vector<T> &resultSet) {
         if (value == max) {
             // 3.1 An intersecting value has been found!
             resultSet.push_back(value);
-            ++its[it];
+            its[it]++;
         } else {
             // 3.2 We shall find a value greater or equal than the currnet max
             its[it] = leapfrogSeek(its[it], indexes[it].end(), max);
@@ -83,7 +83,7 @@ void leapfrogJoin(std::vector<C<A...>> &indexes, std::vector<T> &resultSet) {
         
         // 4. Store the maximum
         max = *(its[it]);
-        it == (++it) % indexes.size();
+        it = (++it) % indexes.size();
     }
 }
 
