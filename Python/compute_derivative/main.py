@@ -18,7 +18,7 @@ class Node:
         pass
 
     def __eq__(self, other):
-        return self.name == other.name and self.value == other.value
+        return self.name == other.name
 
     def __str__(self):
         return str(self.name)
@@ -75,14 +75,12 @@ class Sub(Operator):
         super().__init__(inputs, name="Sub")
 
     def compute_value(self):
-        return self.inputs[0].compute_value() + \
-                sum(-1 * inp.compute_value()
-                    for inp in self.inputs)
+        a, b = self.inputs
+        return a.compute_value() - b.compute_value()
 
     def compute_derivative(self, to_variable):
-        return self.inputs[0].compute_derivative() + \
-                sum(-1 * inp.compute_derivative()
-                    for inp in self.inputs)
+        a, b = self.inputs
+        return a.compute_derivative(to_variable) - b.compute_derivative(to_variable)
 
 
 def product(items):
@@ -115,16 +113,16 @@ class Div(Operator):
         super().__init__(inputs, name="Div")
 
     def compute_value(self):
-        a, b = [inp.commpute_value() for inp in self.inputs]
+        a, b = [inp.compute_value() for inp in self.inputs]
         return a / b
 
     def compute_derivative(self, to_variable):
-        a, b = [inp.commpute_value() for inp in self.inputs]
+        a, b = [inp.compute_value() for inp in self.inputs]
         da, db = [inp.compute_derivative(to_variable) for inp in self.inputs]
         return (da * b - db * a) / (b ** 2)
 
 
-class Power(Operator):
+class Pow(Operator):
     def __init__(self, inputs):
         super().__init__(inputs, name="Pow")
 
@@ -138,5 +136,43 @@ class Power(Operator):
         n = n.value
         return n * (x.compute_value() ** (n - 1)) * x.compute_derivative(to_variable)
 
+
+def wrapper_opt(opt, self, other, r=False):
+    opt2class = {"add": Add, "sub": Sub, "mul": Mul, "div": Div, "pow": Pow}
+    if not isinstance(other, Node):
+        other = Constant(other) 
+    inputs = [other, self] if r else [self, other]
+    node = opt2class[opt](inputs=inputs)
+    return node
+
+
+Node.__add__ = lambda self, other: wrapper_opt("add", self, other)
+Node.__sub__ = lambda self, other: wrapper_opt("sub", self, other)
+Node.__mul__ = lambda self, other: wrapper_opt("mul", self, other)
+Node.__truediv__ = lambda self, other: wrapper_opt("div", self, other)
+Node.__pow__ = lambda self, other: wrapper_opt("pow", self, other)
+Node.__radd__ = lambda self, other: wrapper_opt("add", self, other, r=True)
+Node.__rmul__ = lambda self, other: wrapper_opt("mul", self, other, r=True)
+Node.__rtruediv__ = lambda self, other: wrapper_opt("div", self, other, r=True)
+
+
 if __name__ == '__main__':
-    print(Add([Variable('x'), Constant(5)]).compute_derivative(Variable('x')))
+    x = Variable('x')
+    y = Variable('y')
+    five = Constant(5)
+
+    # y = x + 5, dy/dx
+    print('y = x + 5, compute dy/dx = ', end='')
+    print(Add([x, five]).compute_derivative(x))
+    print()
+
+    function = 3 * (x ** 2) + 5 * x * y + 6 / x - 8 * y ** 2 + 10
+
+    x.value = 18
+    y.value = 2
+    print('y = ', end='')
+    print(function)
+    print('compute value: ', end='')
+    print(function.compute_value())
+    print('compute derivative x: ', end='')
+    print(function.compute_derivative(x))
